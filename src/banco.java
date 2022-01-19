@@ -18,9 +18,8 @@ public class banco {
     public static void main(String[] args){
         Scanner ler = new Scanner(System.in);
 
-        float saldo;
-        float valorDepositado;
-        int opcao,contaExistente;
+        float saldo, valorDepositado;
+        int opcao, contaExistente;
         String nome;
 
         System.out.println("Digite seu nome: ");
@@ -31,7 +30,13 @@ public class banco {
         contaExistente = ler.nextInt();
 
         if(contaExistente == 2){
-
+            System.out.println("1 - Saldo"+
+                    "\n2 - Depositar"+
+                    "\n3 - Saque"+
+                    "\n4 - Encerrar conta"+
+                    "\n0 - Terminar operação");
+            System.out.println("\n");
+            opcao = ler.nextInt();
         }else{
             do{
                 System.out.println("1 - Abrir conta" +
@@ -52,6 +57,8 @@ public class banco {
                 if(opcao == 3){
                     System.out.println("\nDigite o valor para depositar: ");
                     valorDepositado = ler.nextFloat();
+                    System.out.println("Valor depositado: " +valorDepositado);
+
                     System.out.println("\n"+nome+ " Sua conta foi aberta e acrescentamos o valor de: "+fazerDeposito.depositando(saldo));
                 }
             }while (opcao != 0);
